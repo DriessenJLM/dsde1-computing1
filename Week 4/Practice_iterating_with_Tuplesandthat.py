@@ -26,3 +26,6 @@ mylist.append("Mercedes")
 print(mylist)
 
 print(mylist[0:2])
+single = mylist[0]
+for y in single:
+    print(y)
