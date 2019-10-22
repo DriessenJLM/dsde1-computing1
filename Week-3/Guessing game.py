@@ -21,14 +21,13 @@ if UserGuess != ComputerGuess:
 print('try again')
 
 print('pick a number between 1 and 10')
-ComputerGuess2 = random.randint(1,10)
 UserGuess2 = input()
 UserGuess2 = int(UserGuess2)
-print(UserGuess2==ComputerGuess2)
+print(UserGuess2==ComputerGuess)
 
-if UserGuess2 != ComputerGuess2 and UserGuess!=ComputerGuess2:
+if UserGuess2 != ComputerGuess and UserGuess!=ComputerGuess:
     print('wrong again!')
-if UserGuess2 == ComputerGuess2:
+if UserGuess2 == ComputerGuess:
     sys.exit()
 
 print('3rd time lucky?')
@@ -46,13 +45,12 @@ elif third != 'Y':
 
 
 print('pick a number between 1 and 10')
-ComputerGuess3 = random.randint(1,10)
 UserGuess3 = input()
 UserGuess3 = int(UserGuess3)
-print(UserGuess3==ComputerGuess3)
+print(UserGuess3==ComputerGuess)
 
-if UserGuess3 == ComputerGuess3:
+if UserGuess3 == ComputerGuess:
     print("congrats you did it")
-if UserGuess3 != ComputerGuess3:
+if UserGuess3 != ComputerGuess:
     print('better luck next time')
 # this one primarilly demonstrates the use of the if function, ahahha
