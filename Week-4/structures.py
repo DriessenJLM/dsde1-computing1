@@ -9,25 +9,34 @@ Simple functions performing operations on basic Python data structures.
 # write a function that returns a list containig the first and the last element
 # of "the_list". 
 def first_and_last(the_list):
-    the_list = [1,2,3,4,5]
-    return [the_list[0::5]]
+    return the_list[0::4]
+print(first_and_last([1,2,3,4,5]))
+
 
 
 # write a function that returns part of "the_list" between indices given by the
 # second and third parameter, respectively. The returned part should be in
 # reverse order than in the original "the_list". 
-# If "end" is greater then "beginning" or any og the indices is out of the
+# If "end" is greater then "beginning" or any of the indices is out of the
 # list, raise a "ValueError" exception. 
 def part_reverse(the_list, beginning, end):
-    return # hint this is incomplete
+    if end > beginning:
+        raise ValueError
+    else:
+        mylist =  the_list[(-beginning): (-end)]
+        mylist.reverse()
+        return mylist
+print(part_reverse([1,2,3,4,5], 4, 1 )) # hint this is incomplete
 
 
 # write a function that at the "index" of "the_list" inserts three times the
 # same value. For example if the_list = [0,1,2,3,4] and index = 3 the function
 # will return [0,1,2,3,3,3,4]. 
 def repeat_at_index(the_list, index):
-    return
-
+    the_list.insert(index,the_list[index])
+    the_list.insert(index,the_list[index])
+    return the_list
+print(repeat_at_index([1,2,3,4,5],3))
 
 # Strings
 
