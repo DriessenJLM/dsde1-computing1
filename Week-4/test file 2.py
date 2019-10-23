@@ -1,20 +1,5 @@
-def palindrome_sentence(sentence):
-    import copy
-    import string
-    rev = copy.copy(sentence)
-    rev = rev.casefold()
-    s = rev
-    s = s.replace(',','')
-    s = s.replace('.','')
-    s = s.replace('!','')
-    s = s.replace(' ','')
-    s = s.replace(';','')
-    s = s.replace(':','')
-    words = copy.copy(s)
-    words =''.join(reversed(s))
-    print(words)
-    if words == s:
-        return True
-    else:
-        return False
-print(palindrome_sentence("Mr. Owl ate my metal worm"))
+def merge_dictionaries(dictionary1, dictionary2):
+    dictionary3 = dictionary1.copy()
+    dictionary3.update(dictionary2)
+    return dictionary3
+print(merge_dictionaries({"name":"jasper", "sex":"male", "age":18},{"make":"ford", "model":"Mustang"}))
