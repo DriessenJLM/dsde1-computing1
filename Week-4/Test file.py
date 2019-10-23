@@ -1,6 +1,18 @@
-def repeat_at_index(the_list, index):
-    the_list.insert(index,the_list[index])
-    the_list.insert(index,the_list[index])
-    the_list.insert(index,the_list[index])
-    return the_list
-print(repeat_at_index([1,2,3,4,5],3))
+def palindrome_sentence(sentence):
+    import copy
+    import string
+    rev = copy.copy(sentence)
+    rev = rev.casefold()
+    rev.replace(',','')
+    rev.replace('.','')
+    rev.replace('!','')
+    rev.replace(' ','')
+    rev.replace(';','')
+    rev.replace(':','')
+    words = copy.copy(rev)
+    words =''.join(reversed(sentence))
+    if words == rev:
+        return True
+    else:
+        return False
+print(palindrome_sentence("Mr. Owl ate my metal worm"))

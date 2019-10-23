@@ -43,14 +43,40 @@ print(repeat_at_index([1,2,3,4,5],3))
 # write a function that checks whether the word is a palindrome, i.e. it reads
 # the same forward and backwards
 def palindrome_word(word):
-    return
+    import copy
+    rev = copy.copy(word)
+    words = word
+    words =''.join(reversed(word))
+    if words == rev:
+        return True
+    else:
+        return False
+print(palindrome_word("racecar"))
 
 # write a function that checks whether the sentence is a palindrome, i.e. it
 # read the same forward and backward. Ignore all spaces and other characters
 # like fullstops, commas, etc. Also do not consider whether the letter is
 # capital or not. 
 def palindrome_sentence(sentence):
-    return
+    import copy
+    import string
+    rev = copy.copy(sentence)
+    rev = rev.casefold()
+    s = rev
+    s = s.replace(',','')
+    s = s.replace('.','')
+    s = s.replace('!','')
+    s = s.replace(' ','')
+    s = s.replace(';','')
+    s = s.replace(':','')
+    words = copy.copy(s)
+    words =''.join(reversed(s))
+    print(words)
+    if words == s:
+        return True
+    else:
+        return False
+print(palindrome_sentence("Mr. Owl ate my metal worm"))
 
 # write a function that concatenates two sentences. First the function checks
 # whether the sentence meets the following criteria: it starts with a capital
