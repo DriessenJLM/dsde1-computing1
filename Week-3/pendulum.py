@@ -1,7 +1,13 @@
 def period(L,g):
+    if g == 0:
+        raise ValueError
+    if isinstance(L,str) is True:
+        raise TypeError
+    if isinstance(g,str) is True:
+        raise TypeError
+    import math
+    twop = 2*(math.pi)
     try:
-        import math
-        twop = 2*(math.pi)
         sqt = (math.sqrt(L/g))
         return twop * sqt
     except TypeError:
@@ -10,4 +16,4 @@ def period(L,g):
         print("the value that you have entered breaks this function")
     except ZeroDivisionError:
         print("you cant divide by zero")
-print(period(2,9))
+print(period(1,9))

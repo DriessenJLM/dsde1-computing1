@@ -9,7 +9,7 @@ with functions.
 # write a function that adds 1
 # to the input and prints the result
 def inc(a):
-   print(a+1)
+   return(a+1)
 print(inc(2))
 
 
@@ -43,9 +43,9 @@ print(sum_inc(2,5))
 # the input number is even
 def is_even(a):
     if a % 2 == 0:
-        return 'truth'
+        return True
     else:
-        return "false"
+        return False
 print(is_even(4))
 
 
@@ -59,8 +59,8 @@ def string_repeat(phrase, repeat):
     # hint: you can add strings together 
     # in order to concatenate them
     s=str()
-    for XXX in range(repeat): #this is where you tell it to do it a set number of times this is through the range function
-        s += phrase #this is where it keeps adding ho to the previoulst empty s variable which then starts to fill
-    print(s)
+    for x in range(repeat): #this is where you tell it to do it a set number of times this is through the range function
+        s += phrase #this is where it keeps adding ho to the previously empty s variable which then starts to fill
+    return s
 print(string_repeat("ho",3))
 

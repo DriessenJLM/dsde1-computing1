@@ -1,18 +1,19 @@
-def palindrome_sentence(sentence):
-    import copy
-    import string
-    rev = copy.copy(sentence)
-    rev = rev.casefold()
-    rev.replace(',','')
-    rev.replace('.','')
-    rev.replace('!','')
-    rev.replace(' ','')
-    rev.replace(';','')
-    rev.replace(':','')
-    words = copy.copy(rev)
-    words =''.join(reversed(sentence))
-    if words == rev:
-        return True
-    else:
-        return False
-print(palindrome_sentence("Mr. Owl ate my metal worm"))
+def period(L,g):
+    if g == 0:
+        raise ValueError
+    if isinstance(L,str) is True:
+        raise TypeError
+    if isinstance(g,str) is True:
+        raise TypeError
+    import math
+    twop = 2*(math.pi)
+    try:
+        sqt = (math.sqrt(L/g))
+        return twop * sqt
+    except TypeError:
+        print("your input has to be numerical")
+    except ValueError:
+        print("the value that you have entered breaks this function")
+    except ZeroDivisionError:
+        print("you cant divide by zero")
+print(period("help",9))
