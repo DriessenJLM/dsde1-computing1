@@ -106,8 +106,6 @@ def concatenate_sentences(sentence1, sentence2):
         raise ValueError
 print(concatenate_sentences("Hello!", "Goodbye!"))
 
-
-
 # Dictionaries
 
 # write a function that checks whether there is a record with given key in the
