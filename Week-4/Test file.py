@@ -1,19 +1,18 @@
-def period(L,g):
-    if g == 0:
+def concatenate_sentences(sentence1, sentence2):
+    first = sentence1[0]
+    second = sentence1.capitalize()
+    if second[0] != first:
         raise ValueError
-    if isinstance(L,str) is True:
-        raise TypeError
-    if isinstance(g,str) is True:
-        raise TypeError
-    import math
-    twop = 2*(math.pi)
-    try:
-        sqt = (math.sqrt(L/g))
-        return twop * sqt
-    except TypeError:
-        print("your input has to be numerical")
-    except ValueError:
-        print("the value that you have entered breaks this function")
-    except ZeroDivisionError:
-        print("you cant divide by zero")
-print(period("help",9))
+    if sentence1[-1] == "!" or sentence1[-1] == "?" or sentence1[-1] == "." :
+        pass
+    else:
+        raise ValueError
+    third = sentence2[0]
+    fourth = sentence2.capitalize()
+    if fourth[0] != third:
+        raise ValueError
+    if sentence2[-1] == "!" or sentence2[-1] == "?" or sentence2[-1] == "." :
+        return sentence1 + sentence2
+    else:
+        raise ValueError
+print(concatenate_sentences("Hello!", "Goodbye!"))
