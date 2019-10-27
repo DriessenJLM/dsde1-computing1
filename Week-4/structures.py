@@ -22,7 +22,11 @@ print(first_and_last([1,2,3,4,5]))
 # If "end" is greater then "beginning" or any of the indices is out of the
 # list, raise a "ValueError" exception. 
 def part_reverse(the_list, beginning, end):
-    if end > beginning:
+    if end > beginning: 
+        raise ValueError
+    if end > len(the_list):
+        raise ValueError
+    if beginning > len(the_list):
         raise ValueError
     else:
         mylist =  the_list[(-beginning): (-end)]
