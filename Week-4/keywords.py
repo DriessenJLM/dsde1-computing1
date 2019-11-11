@@ -14,16 +14,16 @@ with default values.
 # it returns 'Hello and welcome to <place>'
 # if both user_name and place are provided
 # it returns 'Hello, <user_name>, and welcome to <place>
-def welcome_message(x,user_name,place):
-    if x == '' and user_name == '' and place == ''  :
-        return "Hello and Welcome"
-    if user_name and place != '':
-        return ('hello, '+ user_name+ ', and welcome to '+place)
-    elif user_name != "":
+def welcome_message(user_name = None, place = None):
+    if user_name == None and place == None  :
+        return "Hello and welcome"
+    if user_name and place != None:
+        return ("Hello, "+ user_name+ ', and welcome to '+place)
+    elif user_name != None:
         return("Hello, " + user_name + ", and welcome")
-    elif place != '':
+    elif place != None:
         return("Hello and welcome to " + place)
-print(welcome_message(x = "", user_name = "Jasper", place = "London"))
+
     
 
 
@@ -38,3 +38,21 @@ print(welcome_message(x = "", user_name = "Jasper", place = "London"))
 # (return list of all modes if there is a tie between multiple values)
 # if avg_type='mean', return the mean of the list
 # if avg_type='median', return the median of this list
+def list_average(listy, avg_type = None):
+    if avg_type == None:
+        if len(listy) == 0:
+            raise ZeroDivisionError
+        else:
+            return int(sum(listy)/len(listy))
+    elif avg_type == "mode":
+        mode1 = max(set(listy), key = listy.count)
+        return mode1
+    elif avg_type == "mean":
+        mean1 = int(sum(listy)/len(listy))
+        return mean1
+    elif avg_type == "median":
+        listy.sort()
+        median1 = listy
+        lenmed = int((len(median1))/2)
+        return listy[lenmed]
+print(list_average([1,2,3,4,5,6,7]))
