@@ -38,14 +38,14 @@ def welcome_message(user_name = None, place = None):
 # (return list of all modes if there is a tie between multiple values)
 # if avg_type='mean', return the mean of the list
 # if avg_type='median', return the median of this list
-def list_average(listy, avg_type = None):
+def list_average(listy, avg_type=None):
     if avg_type == None:
         if len(listy) == 0:
             raise ZeroDivisionError
         else:
             return int(sum(listy)/len(listy))
     elif avg_type == "mode":
-        mode1 = max(set(listy), key = listy.count)
+        mode1 = max(set(listy), key=listy.count)
         return mode1
     elif avg_type == "mean":
         mean1 = int(sum(listy)/len(listy))
@@ -55,4 +55,4 @@ def list_average(listy, avg_type = None):
         median1 = listy
         lenmed = int((len(median1))/2)
         return listy[lenmed]
-print(list_average([1,2,3,4,5,6,7]))
+print(list_average([1, 2, 3, 4, 5, 6, 7]))
